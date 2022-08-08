@@ -5,7 +5,7 @@ const prettier = require("prettier");
 
 const getDate = new Date().toISOString();
 
-const YOUR_AWESOME_DOMAIN = "https://shopcollector.vercel.app";
+const YOUR_AWESOME_DOMAIN = "https://pangcollector.vercel.app";
 
 const formatted = sitemap => prettier.format(sitemap, { parser: "html" });
 

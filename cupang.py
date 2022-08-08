@@ -26,7 +26,7 @@ def generateHmac(method, url, api_secret_key, api_access_key):
     return 'CEA algorithm=HmacSHA256, access-key={}, signed-date={}, signature={}'.format(api_access_key, dt_datetime, signature)
  
 def get_cuplink(linkList):
-    subId='shopcollector'
+    subId='pangcollector'
 
     REQUEST = dict()
     REQUEST['coupangUrls'] = linkList
@@ -57,7 +57,7 @@ def get_cuplink(linkList):
 
 def cupang_search(categoryId,limit): 
     # 쿠팡 API 호출[url 설정]
-    subId='shopcollector'
+    subId='pangcollector'
     request_method = 'GET'
     domain = 'https://api-gateway.coupang.com'
     api_url = '/v2/providers/affiliate_open_api/apis/openapi/v1/products/bestcategories/' + str(categoryId) + '?limit=' + str(limit)+'&subId='+str(subId)

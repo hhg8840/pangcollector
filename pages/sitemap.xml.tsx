@@ -11,7 +11,7 @@ export async function getServerSideProps({ res }) {
         const id = it.split(".json")[0];
         const date = getDateById(id, "DATE");
         return {
-            url: `https://shopcollector.vercel.app/dailybest/${id}`,
+            url: `https://pangcollector.vercel.app/dailybest/${id}`,
             date: new Date(date),
         };
     });

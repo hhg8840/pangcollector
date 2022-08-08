@@ -31,7 +31,7 @@ const getPostPages = () => {
         const id = it.split(".json")[0];
         const date = new Date(getDateById(id, "DATE"));
         return {
-            url: `https://shopcollector.vercel.app/dailybest/${id}`,
+            url: `https://pangcollector.vercel.app/dailybest/${id}`,
             date: date.toISOString(),
         };
     });
@@ -48,7 +48,7 @@ const getPostDetailPages = () => {
         const fileContent = JSON.parse(fs.readFileSync(postsDirectory + "/" + file));
         const curItemList = fileContent.item_list.map((item) => {
             return {
-                url: `https://shopcollector.vercel.app/product/${productNameSpinner(item.productName)}-${
+                url: `https://pangcollector.vercel.app/product/${productNameSpinner(item.productName)}-${
                     item.productId
                 }`,
                 date: date.toISOString(),
@@ -63,7 +63,7 @@ const writeRobotsTxt = () => {
     const robot = `
     User-agent: *
     Allow: /
-    Sitemap: https://shopcollector.vercel.app/sitemap.xml
+    Sitemap: https://pangcollector.vercel.app/sitemap.xml
     `;
 
     fs.writeFileSync(path.join("./.next/static", "robots.txt"), robot);
@@ -108,7 +108,7 @@ function main() {
     console.log("SITEMAP GENERATED!!!");
     fs.writeFileSync(path.join("./.next/static", "sitemap.xml"), sitemap);
 
-    fetch("http://www.google.com/ping?sitemap=https://shopcollector.vercel.app/sitemap.xml").then(() =>
+    fetch("http://www.google.com/ping?sitemap=https://pangcollector.vercel.app/sitemap.xml").then(() =>
         console.log("SUCCESS TO PING")
     );
 }
