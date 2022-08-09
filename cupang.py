@@ -6,6 +6,8 @@ import os
 import requests
 import json
 from time import gmtime, strftime
+import urllib
+import urllib.request
 
 now_path = os.path.dirname(os.path.realpath(__file__))
 file = open(f'{now_path}/metadata/setting.json',
@@ -76,4 +78,29 @@ def cupang_search(categoryId,limit):
     
     # 쿠팡 API 호출[result_data]'
     result_data = response.json()['data']
+    return result_data
+
+
+def cupang_keyword_search(keyword, limit):
+    # 쿠팡 API 호출[url 설정]
+    subId = 'pangcollector'
+    request_method = 'GET'
+    domain = 'https://api-gateway.coupang.com'
+    api_url = '/v2/providers/affiliate_open_api/apis/openapi/products/search?keyword=' + urllib.parse.quote(keyword) + '&limit=' + str(limit) + '&subId=' + str(subId)
+
+    # 쿠팡 API 호출[response]
+    authorization = generateHmac(request_method, api_url, SECRET_KEY, ACCESS_KEY)
+    coupang_url = '{}{}'.format(domain, api_url)
+    response = requests.request(method=request_method,
+                                url=coupang_url,
+                                headers={'Authorization': authorization, 'Content-Type': 'application/json'}
+                                )
+
+
+    # 쿠팡 API 호출[IF rCode]
+    if (response.json()['rCode'] != '0'):
+        print('쿠팡 API 호출 오류[' + str(response.json()['rCode']) + ']')
+
+    # 쿠팡 API 호출[result_data]'
+    result_data = response.json()['data']['productData']
     return result_data
