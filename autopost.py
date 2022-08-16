@@ -54,7 +54,6 @@ def main():
     else:
         next_index = now_index + 1
 
-
     # 상품 가져오기    
     category = category_list[next_index]
     categoryId = request_list[next_index]
@@ -99,4 +98,7 @@ def main():
         file.write(json.dumps(resDict, ensure_ascii=False))
 
 if __name__ == "__main__":
-    main()
+    loopcnt = 0
+    while loopcnt < 5:
+        main()
+        loopcnt = loopcnt + 1
