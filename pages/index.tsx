@@ -67,7 +67,7 @@ const Home = (props) => {
             <div className="Home">
                 <section className="section_item">
                     <div className="item_header">
-                        <h4># 가장 최근에 수집된 카테고리</h4>
+                        <h4># 전체 카테고리</h4>
                         <span>
                             <Link href={"/dailybest"}>+ 더 보기</Link>
                         </span>
@@ -80,7 +80,7 @@ const Home = (props) => {
                 </section>
                 <section className="section_item">
                     <div className="item_header">
-                        <h4># 가장 최근에 수집된 상품</h4>
+                        <h4># 추천 상품</h4>
                         <span>
                             <Link href={"/product"}>+ 더 보기</Link>
                         </span>

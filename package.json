@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "postbuild": "node ./scripts/postbuild"
+    "postbuild": "node ./scripts/postbuild",
+    "searchkeywordpostbuild": "node ./scripts/searchkeywordpostbuild"
   },
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",

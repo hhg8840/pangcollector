@@ -25,12 +25,16 @@ const Header = () => {
             path: "/product",
             name: "PRODUCT",
         },
+        {
+            path: "/recommendbest",
+            name: "추천",
+        },
     ];
     const router = useRouter();
     console.log(router.pathname);
     return (
         <header className="Header">
-            <h2>실시간 데일리베스트</h2>
+            <h2>실시간 추천 베스트</h2>
             <nav>
                 {menuItemList.map((it, idx) => (
                     <MenuItem key={`MENU_ITEM::${idx}`} isNow={it.path === router.pathname} {...it} />

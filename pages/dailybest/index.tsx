@@ -65,7 +65,7 @@ const DailyBestHome = (props) => {
     });
 
     const ogObj = {
-        title: "실시간 데일리 베스트",
+        title: "실시간 추천 베스트",
         description: `${DayList.map((it) => {
             const day = it.date;
             const categories = it.itemList.map((item) => item.category + "TOP20").join(", ");
@@ -78,21 +78,21 @@ const DailyBestHome = (props) => {
     return (
         <Layout>
             <Head>
-                <title>실시간 데일리 베스트</title>
+                <title>실시간 추천 베스트</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 <meta name="description" content={ogObj.description} />
                 <meta property="og:title" content={ogObj.title} />
                 <meta property="og:description" content={ogObj.description} />
                 <meta property="og:image" content={ogObj.image} />
-                <meta property="og:site_name" content="쿠팡 실시간 데일리 베스트 TOP20" />
+                <meta property="og:site_name" content="쿠팡 실시간 추천 베스트 TOP10" />
                 <meta property="og:type" content="product" />
                 <meta property="product:price:currency" content="KRW" />
                 <meta name="robots" content="index" />
             </Head>
             <div className="DailyBestHome">
                 <div className="home_header">
-                    <h2>실시간 데일리 베스트</h2>
-                    <span>실시간 데일리 베스트는 2시간마다 업데이트 됩니다</span>
+                    <h2>실시간 추천 리스트</h2>
+                    {/*<span>실시간 데일리 베스트는 2시간마다 업데이트 됩니다</span>*/}
                 </div>
 
                 <div>

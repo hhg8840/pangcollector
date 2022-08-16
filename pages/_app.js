@@ -19,10 +19,10 @@ function MyApp({ Component, pageProps }) {
     return (
         <div>
             <Head>
-                <script async src="https://www.googletagmanager.com/gtag/js?id=G-EPC17P7MRQ"></script>
+                {/*<script async src="https://www.googletagmanager.com/gtag/js?id=G-EPC17P7MRQ"></script>*/}
                 <script dangerouslySetInnerHTML={{ __html: googleAnalyticsTag }}></script>
-                <meta name="google-site-verification" content="Crt5iVgpjWMM_wix5Y8ToBQvkjogLpYyYnttvNIeXZ0" />
-                <meta name="naver-site-verification" content="acb02897aa82441044a67287ff54dd1f7b213a19" />
+                {/*<meta name="google-site-verification" content="Crt5iVgpjWMM_wix5Y8ToBQvkjogLpYyYnttvNIeXZ0" />*/}
+                {/*<meta name="naver-site-verification" content="acb02897aa82441044a67287ff54dd1f7b213a19" />*/}
             </Head>
             <Component {...pageProps} />
             <footer></footer>
