@@ -99,6 +99,6 @@ def main():
 
 if __name__ == "__main__":
     loopcnt = 0
-    while loopcnt < 5:
+    while loopcnt < 10:
         main()
         loopcnt = loopcnt + 1
